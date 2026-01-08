@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睿视AI - 普惠化眼底疾病辅助筛查平台</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+        <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-eye"></i>
+                <span>睿视AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#features">核心技术</a></li>
+                <li><a href="#demo">在线演示</a></li>
+                <li><a href="#tech">技术优势</a></li>
+                <li><a href="#about">关于我们</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn btn-outline">申请试用</button>
+            </div>
+        </div>
+    </nav>
+        <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">基于深度学习与多模态融合的普惠化<span class="highlight">眼底疾病辅助筛查平台</span></h1>
+                <p class="hero-subtitle">将三甲医院的筛查能力下沉至基层，让优质医疗资源触手可及</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">>95%</span>
+                        <span class="stat-label">AI诊断准确率</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3分钟</span>
+                        <span class="stat-label">快速筛查</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5万+</span>
+                        <span class="stat-label">临床验证案例</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg" onclick="scrollToDemo()">
+                    <i class="fas fa-play-circle"></i> 立即体验
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="眼底筛查设备" class="hero-img">
+                    <div class="floating-card">
+                        <div class="floating-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="floating-text">
+                            <h4>多病种联合筛查</h4>
+                            <p>同时检测糖网、青光眼、病理性近视等8种眼病</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- 核心技术 -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2 class="section-title">核心技术创新</h2>
+            <p class="section-subtitle">一体化解决方案，专为基层医疗场景定制</p>
+        </div>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="feature-title">一体化硬件</h3>
+                <p class="feature-desc">自主研发低成本、便携式智能眼底相机，操作简单，适合基层医疗机构使用。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="feature-title">多模态AI算法</h3>
+                <p class="feature-desc">融合深度学习与多模态数据，实现多病种联合筛查，准确率>95%。</p>
+            </div>
+                        <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="feature-title">云端服务平台</h3>
+                <p class="feature-desc">提供AI分析、专家复核、绿色转诊一站式服务，构建完整医疗闭环。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <h3 class="feature-title">普惠商业模式</h3>
+                <p class="feature-desc">"设备租赁+按次付费"模式，大幅降低基层医疗机构的筛查成本。</p>
+            </div>
+        </div>
+    </section>
+<!-- 在线演示 -->
+    <section id="demo" class="demo">
+        <div class="section-header">
+            <h2 class="section-title">AI眼底筛查演示</h2>
+            <p class="section-subtitle">上传眼底图片，体验AI辅助诊断的精准与高效</p>
+        </div>
+        <div class="demo-container">
+            <div class="demo-card">
+                <div class="demo-sidebar">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>上传眼底图片</h3>
+                        <p>支持JPG、PNG格式，建议图片尺寸512×512以上</p>
+                        <input type="file" id="imageUpload" accept="image/*" hidden>
+                        <button class="btn btn-primary" onclick="document.getElementById('imageUpload').click()">
+                            选择图片
+                        </button>
+                        <div class="sample-images">
+                            <p>或使用示例图片：</p>
+                            <div class="sample-thumbnails">
+                                <div class="sample-thumb" data-image="normal">
+                                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="正常眼底">
+                                    <span>正常眼底</span>
+                                </div>
+                                <div class="sample-thumb" data-image="dr">
+                                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="糖尿病视网膜病变">
+                                    <span>糖网病变</span>
+                                </div>
+                                <div class="sample-thumb" data-image="glaucoma">
+                                    <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="青光眼">
+                                    <span>青光眼可疑</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-main">
+                    <div class="image-preview-container">
+                        <div class="preview-placeholder" id="previewPlaceholder">
+                            <i class="fas fa-eye"></i>
+                            <p>上传眼底图片后，AI将自动分析</p>
+                        </div>
+                        <canvas id="imageCanvas" class="hidden"></canvas>
+                        <div class="image-overlay" id="imageOverlay">
+                            <!-- AI标注将在这里显示 -->
+                        </div>
+                    </div>
+                                        <div class="analysis-controls">
+                        <button class="btn btn-primary" id="analyzeBtn" disabled onclick="analyzeImage()">
+                            <i class="fas fa-search"></i> 开始AI分析
+                        </button>
+                        <button class="btn btn-outline" id="resetBtn" onclick="resetDemo()">
+                            <i class="fas fa-redo"></i> 重置
+                        </button>
+                        <div class="quality-check">
+                            <input type="checkbox" id="qualityCheck" checked>
+                            <label for="qualityCheck">启用图像质量评估</label>
+                        </div>
+                    </div>
+                    <div class="results-container">
+                        <div class="results-section">
+                            <h3><i class="fas fa-clipboard-check"></i> 图像质量评估</h3>
+                            <div class="quality-results" id="qualityResults">
+                                <p>请上传图片进行质量评估</p>
+                            </div>
+                        </div>
+                        
+                        <div class="results-section">
+                            <h3><i class="fas fa-stethoscope"></i> 疾病筛查结果</h3>
+                            <div class="disease-results" id="diseaseResults">
+                                <p>AI分析结果将在这里显示</p>
+                            </div>
+                        </div>
+                        <div class="results-section">
+                            <h3><i class="fas fa-file-medical-alt"></i> 结构化报告</h3>
+                            <div class="report-output" id="reportOutput">
+                                <p>完整的筛查报告将在这里生成</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- 技术优势对比 -->
+    <section id="tech" class="comparison">
+        <div class="section-header">
+            <h2 class="section-title">与传统方案对比</h2>
+            <p class="section-subtitle">为什么睿视AI更适合基层医疗机构</p>
+        </div>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>对比维度</th>
+                        <th>传统AI软件</th>
+                        <th>进口高端设备</th>
+                        <th class="highlight-cell">睿视AI解决方案</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>产品形态</td>
+                        <td>仅软件，需搭配设备</td>
+                        <td>仅硬件，无AI功能</td>
+                        <td class="highlight-cell"><strong>硬件+算法+云服务一体化</strong></td>
+                    </tr>
+                                        <tr>
+                        <td>目标市场</td>
+                        <td>大型医院</td>
+                        <td>三甲医院</td>
+                        <td class="highlight-cell"><strong>基层医疗机构（社区、乡镇）</strong></td>
+                    </tr>
+                    <tr>
+                        <td>商业模式</td>
+                        <td>高单价软件授权</td>
+                        <td>高昂设备费用（数十万）</td>
+                        <td class="highlight-cell"><strong>低门槛硬件+按次付费</strong></td>
+                    </tr>
+                    <tr>
+                        <td>技术特点</td>
+                        <td>单病种高精度</td>
+                        <td>高清成像，无AI</td>
+                        <td class="highlight-cell"><strong>多病种联合筛查，鲁棒性强</strong></td>
+                    </tr>
+                    <tr>
+                        <td>服务闭环</td>
+                        <td>仅诊断工具</td>
+                        <td>仅影像采集</td>
+                        <td class="highlight-cell"><strong>筛查-诊断-转诊完整闭环</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- 关于我们 -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2 class="section-title">关于睿视AI</h2>
+            <p class="section-subtitle">用AI技术推动医疗资源公平可及</p>
+        </div>
+        <div class="about-container">
+            <div class="about-content">
+                <h3>项目愿景</h3>
+                <p>睿视AI致力于通过人工智能技术，将优质的眼底疾病筛查能力赋能给基层医疗机构，解决我国眼科医生资源不足、分布不均的问题，助力"健康中国2030"规划。</p>
+                
+                <h3>技术创新</h3>
+                <p>项目采用多模态融合的深度学习算法，针对基层医疗场景优化，能够处理质量较低的眼底图像，同时检测多种常见致盲眼病，准确率达国际先进水平。</p>
+                
+                <h3>社会价值</h3>
+                <ul class="value-list">
+                    <li><i class="fas fa-check-circle"></i> 提升基层医疗服务能力，推动分级诊疗</li>
+                    <li><i class="fas fa-check-circle"></i> 降低筛查成本，使更多人群受益</li>
+                    <li><i class="fas fa-check-circle"></i> 早期发现致盲眼病，避免因盲致贫</li>
+                    <li><i class="fas fa-check-circle"></i> 积累医疗大数据，助力医学研究</li>
+                </ul>
+                 </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">试点城市</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">累计筛查量</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98.2%</div>
+                    <div class="stat-label">临床符合率</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">可筛查疾病种类</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-eye"></i>
+                    <span>睿视AI</span>
+                </div>
+                <p class="footer-desc">基于深度学习与多模态融合的普惠化眼底疾病辅助筛查平台</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>核心技术</h4>
+                <ul>
+                    <li><a href="#">多模态AI算法</a></li>
+                    <li><a href="#">智能硬件设计</a></li>
+                    <li><a href="#">云服务平台</a></li>
+                    <li><a href="#">边缘计算</a></li>
+                </ul>
+            </div>
+                        <div class="footer-section">
+                <h4>应用场景</h4>
+                <ul>
+                    <li><a href="#">社区卫生服务中心</a></li>
+                    <li><a href="#">乡镇卫生院</a></li>
+                    <li><a href="#">体检中心</a></li>
+                    <li><a href="#">药店健康站</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村科技园</p>
+                <p><i class="fas fa-phone"></i> 400-123-4567</p>
+                <p><i class="fas fa-envelope"></i> contact@retina-ai.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 睿视AI眼底筛查平台. 本项目为"挑战杯"大学生创业计划竞赛参赛作品.</p>
+        </div>
+    </footer>
+        <script src="script.js"></script>
+        <script src="model-demo.js"></script>
+</body>
+</html>
